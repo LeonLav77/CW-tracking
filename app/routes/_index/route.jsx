@@ -1,6 +1,17 @@
 import React from 'react';
 
 export default function AppOverview() {
+  const handleThemeExtensionSetup = () => {
+    const shopDomain = window.location.hostname.includes('shopify.com') 
+      ? window.location.pathname.split('/')[2] 
+      : null;
+    
+    if (shopDomain) {
+      const themeEditorUrl = `https://admin.shopify.com/store/${shopDomain}/themes/current/editor`;
+      window.open(themeEditorUrl, '_top');
+    }
+  };
+
   return (
     <div style={{ 
       maxWidth: '800px', 
@@ -24,7 +35,7 @@ export default function AppOverview() {
           color: '#6d7175',
           margin: '0'
         }}>
-          Affiliate marketing tracking made simple for Shopify stores
+          Circular Wealth Affiliate marketing tracking made simple for Shopify stores
         </p>
       </div>
 
@@ -49,9 +60,9 @@ export default function AppOverview() {
           color: '#404145',
           margin: '0 0 16px 0'
         }}>
-          This Shopify app automatically tracks affiliate marketing conversions by monitoring when customers 
-          make purchases after clicking affiliate links. It captures order data and sends it to the TUNE 
-          platform for commission processing.
+          Circular Wealth Tracking automatically monitors affiliate-driven conversions on your Shopify store. 
+          When a customer clicks an affiliate link and completes a purchase, the app captures the order data 
+          and sends it to the <strong>Circular Wealth</strong> platform for accurate commission processing.
         </p>
       </div>
 
@@ -64,7 +75,7 @@ export default function AppOverview() {
           margin: '0 0 24px 0',
           textAlign: 'center'
         }}>
-          How it works in 3 steps
+          How it works — in 3 simple steps
         </h3>
         
         <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
@@ -96,7 +107,7 @@ export default function AppOverview() {
               Customer Clicks Link
             </h4>
             <p style={{ fontSize: '14px', color: '#6d7175', margin: '0' }}>
-              Customer clicks affiliate link with tracking ID
+              A shopper clicks an affiliate link containing a unique tracking ID.
             </p>
           </div>
 
@@ -128,12 +139,12 @@ export default function AppOverview() {
               App Tracks Purchase
             </h4>
             <p style={{ fontSize: '14px', color: '#6d7175', margin: '0' }}>
-              App detects when they complete a purchase
+              The app detects when the shopper completes their order.
             </p>
           </div>
 
           <div style={{
-            flex: '1',
+            flex: '1',  
             minWidth: '200px',
             textAlign: 'center',
             padding: '24px',
@@ -160,7 +171,7 @@ export default function AppOverview() {
               Commission Processed
             </h4>
             <p style={{ fontSize: '14px', color: '#6d7175', margin: '0' }}>
-              Data sent to TUNE for affiliate payout
+              Relevant order details (such as order amount and discount code used) are securely sent to Circular Wealth for accurate attribution.
             </p>
           </div>
         </div>
@@ -187,28 +198,28 @@ export default function AppOverview() {
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
             <span style={{ fontSize: '18px' }}>🔄</span>
             <div>
-              <strong>Automatic Tracking:</strong> No manual work required - everything happens automatically
+              <strong>Automatic Tracking:</strong> Fully automated—no manual tagging or tracking setup required.
             </div>
           </div>
           
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
             <span style={{ fontSize: '18px' }}>🎯</span>
             <div>
-              <strong>TUNE Integration:</strong> Seamlessly connects with TUNE platform for commission management
+              <strong>Circular Wealth Integration:</strong> Built to connect directly with the <strong>Circular Wealth</strong> platform for seamless affiliate commission management.
             </div>
           </div>
           
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
             <span style={{ fontSize: '18px' }}>⚡</span>
             <div>
-              <strong>Real-time Processing:</strong> Orders are tracked and processed immediately
+              <strong>Real-Time Processing:</strong> Order tracking and data syncing happen instantly.
             </div>
           </div>
           
           <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
             <span style={{ fontSize: '18px' }}>🛡️</span>
             <div>
-              <strong>Secure & Reliable:</strong> Enterprise-grade tracking with precise attribution
+              <strong>Secure & Reliable:</strong> Enterprise-grade tracking with high accuracy and robust attribution logic.
             </div>
           </div>
         </div>
@@ -233,10 +244,42 @@ export default function AppOverview() {
         <p style={{
           fontSize: '14px',
           color: '#92400e',
-          margin: '0'
+          margin: '0 0 16px 0'
         }}>
-          Remember to enable the theme extension in your Shopify theme settings to activate tracking
+          Enable the theme extension in your Shopify theme settings to activate tracking
         </p>
+        <button 
+          onClick={handleThemeExtensionSetup}
+          style={{
+            display: 'inline-block',
+            backgroundColor: '#005bd3',
+            color: 'white',
+            padding: '12px 24px',
+            borderRadius: '6px',
+            textDecoration: 'none',
+            fontSize: '14px',
+            fontWeight: '600',
+            border: 'none',
+            cursor: 'pointer',
+            marginRight: '12px'
+          }}
+        >
+          Open Theme Editor
+        </button>
+        <div style={{ 
+          fontSize: '12px', 
+          color: '#6d7175', 
+          marginTop: '8px',
+          fontStyle: 'italic'
+        }}>
+          In the theme editor:
+          <br />
+          1. Click "Add app block" or look in the left sidebar
+          <br />
+          2. Find "Circular Wealth Tracking" 
+          <br />
+          3. Add it to your theme where you want tracking to occur
+        </div>
       </div>
     </div>
   );

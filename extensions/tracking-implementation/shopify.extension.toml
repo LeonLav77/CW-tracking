@@ -1,3 +1,5 @@
 name = "tracking-implementation"
 type = "theme"
 
+[settings]
+name = "Circular Wealth Tracking"
