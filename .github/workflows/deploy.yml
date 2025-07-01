@@ -1,0 +1,43 @@
+name: Vercel CD
+
+on: push
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+
+permissions: write-all
+
+jobs:
+  deploy:
+    if: github.event.pull_request.draft == false
+
+    runs-on: ubuntu-latest
+
+    name: Deploy to Vercel
+
+    steps:
+    - name: Pulling project
+      uses: actions/checkout@v4
+
+    - name: Deploy to Vercel
+      id: vercel
+      uses: amondnet/vercel-action@v25
+      with:
+        vercel-token: 'La6Nh3XknbG8GNx967uPDYOO' #Required
+        vercel-org-id: 'team_qolK9BnBzq0bEjrEEGuYAIjx' #Required
+        vercel-project-id: 'prj_N2y6MtGAIhzTq8Aa99gfIqjTdwS0' #Required
+        vercel-args: ${{ github.ref_name == 'main' && '--prod' || '' }} #Optional
+        scope: 'lloyds-digital' #Optional
+        github-token: ${{ secrets.GITHUB_TOKEN }} #Optional
+        vercel-version: latest #Optional
+
+    - name: Create GitHub Deployment
+      uses: chrnorm/deployment-action@v2
+      with:
+        initial-status: success
+        token: ${{ secrets.GITHUB_TOKEN }}
+        production-environment: ${{ github.ref_name == 'main' && 'true' || 'false' }}
+        environment: ${{ github.ref_name == 'main' && 'Production' || 'Development' }}
+        environment-url: ${{ steps.vercel.outputs.preview-url }}
+        description: ${{ steps.vercel.outputs.preview-name }}

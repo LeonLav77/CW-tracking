@@ -11,11 +11,16 @@ node_modules
 /prisma/dev.sqlite-journal
 database.sqlite
 
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+bun.lock
+.eslintcache
+.stylelintcache
 .env
-
-
-
-
+.vercel
+.netlify
 
 /extensions/*/dist
 
