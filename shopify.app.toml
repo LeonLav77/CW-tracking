@@ -3,7 +3,7 @@
 client_id = "65203b3f2d4c770ac75db5629f40f946"
 name = "Circular Wealth Tracking"
 handle = "circular-wealth-tracking-1"
-application_url = "https://era-surfaces-virtual-antarctica.trycloudflare.com"
+application_url = "https://circular-wealth-tracking.vercel.app"
 embedded = true
 
 [build]
@@ -31,9 +31,9 @@ scopes = "read_customers,read_orders,read_products"
 
 [auth]
 redirect_urls = [
-  "https://era-surfaces-virtual-antarctica.trycloudflare.com/auth/callback",
-  "https://era-surfaces-virtual-antarctica.trycloudflare.com/auth/shopify/callback",
-  "https://era-surfaces-virtual-antarctica.trycloudflare.com/api/auth/callback"
+  "https://circular-wealth-tracking.vercel.app/auth/callback",
+  "https://circular-wealth-tracking.vercel.app/auth/shopify/callback",
+  "https://circular-wealth-tracking.vercel.app/api/auth/callback"
 ]
 
 [pos]
