@@ -171,38 +171,6 @@ export default function AppOverview() {
         }}>
           Enable the theme extension in your Shopify theme settings to activate tracking
         </p>
-        <button 
-          onClick={() => {
-            console.log('Opening theme editor...');
-            (() => {
-              console.log(window);
-              console.log(window.location);
-              console.log(window.location.hostname);
-              const shopDomain = window.location.hostname.includes('shopify.com') 
-                ? window.location.pathname.split('/')[2] 
-                : null;
-
-              if (shopDomain) {
-                window.open(`https://admin.shopify.com/store/${shopDomain}/themes/current/editor`, '_top');
-              }
-            })();
-          }}
-          style={{
-            display: 'inline-block',
-            backgroundColor: '#005bd3',
-            color: 'white',
-            padding: '12px 24px',
-            borderRadius: '6px',
-            textDecoration: 'none',
-            fontSize: '14px',
-            fontWeight: '600',
-            border: 'none',
-            cursor: 'pointer',
-            marginRight: '12px'
-          }}
-        >
-          Open Theme Editor
-        </button>
         <div style={{ 
           fontSize: '12px', 
           color: '#6d7175', 
@@ -211,7 +179,7 @@ export default function AppOverview() {
         }}>
           In the theme editor:
           <br />
-          1. Click "Add app block" or look in the left sidebar - LEON TEST
+          1. Click "Add app block" or look in the left sidebar
           <br />
           2. Find "Circular Wealth Tracking" 
           <br />
