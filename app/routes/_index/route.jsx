@@ -68,101 +68,51 @@ export default function AppOverview() {
         </h3>
         
         <div style={{ display: 'flex', gap: '24px', flexWrap: 'wrap' }}>
-          <div style={{
-            flex: '1',
-            minWidth: '200px',
-            textAlign: 'center',
-            padding: '24px',
-            backgroundColor: '#ffffff',
-            border: '1px solid #e1e3e5',
-            borderRadius: '8px'
-          }}>
-            <div style={{
-              width: '48px',
-              height: '48px',
-              backgroundColor: '#005bd3',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 16px',
-              color: 'white',
-              fontSize: '20px',
-              fontWeight: 'bold'
+          {[{
+            step: '1',
+            title: 'Customer Clicks Link',
+            desc: 'A shopper clicks an affiliate link containing a unique tracking ID.'
+          }, {
+            step: '2',
+            title: 'App Tracks Purchase',
+            desc: 'The app detects when the shopper completes their order.'
+          }, {
+            step: '3',
+            title: 'Commission Processed',
+            desc: 'Relevant order details (such as order amount and discount code used) are securely sent to Circular Wealth for accurate attribution.'
+          }].map((item, idx) => (
+            <div key={idx} style={{
+              flex: '1',
+              minWidth: '200px',
+              textAlign: 'center',
+              padding: '24px',
+              backgroundColor: '#ffffff',
+              border: '1px solid #e1e3e5',
+              borderRadius: '8px'
             }}>
-              1
+              <div style={{
+                width: '48px',
+                height: '48px',
+                backgroundColor: '#005bd3',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                margin: '0 auto 16px',
+                color: 'white',
+                fontSize: '20px',
+                fontWeight: 'bold'
+              }}>
+                {item.step}
+              </div>
+              <h4 style={{ fontSize: '16px', fontWeight: '600', margin: '0 0 8px 0' }}>
+                {item.title}
+              </h4>
+              <p style={{ fontSize: '14px', color: '#6d7175', margin: '0' }}>
+                {item.desc}
+              </p>
             </div>
-            <h4 style={{ fontSize: '16px', fontWeight: '600', margin: '0 0 8px 0' }}>
-              Customer Clicks Link
-            </h4>
-            <p style={{ fontSize: '14px', color: '#6d7175', margin: '0' }}>
-              A shopper clicks an affiliate link containing a unique tracking ID.
-            </p>
-          </div>
-
-          <div style={{
-            flex: '1',
-            minWidth: '200px',
-            textAlign: 'center',
-            padding: '24px',
-            backgroundColor: '#ffffff',
-            border: '1px solid #e1e3e5',
-            borderRadius: '8px'
-          }}>
-            <div style={{
-              width: '48px',
-              height: '48px',
-              backgroundColor: '#005bd3',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 16px',
-              color: 'white',
-              fontSize: '20px',
-              fontWeight: 'bold'
-            }}>
-              2
-            </div>
-            <h4 style={{ fontSize: '16px', fontWeight: '600', margin: '0 0 8px 0' }}>
-              App Tracks Purchase
-            </h4>
-            <p style={{ fontSize: '14px', color: '#6d7175', margin: '0' }}>
-              The app detects when the shopper completes their order.
-            </p>
-          </div>
-
-          <div style={{
-            flex: '1',  
-            minWidth: '200px',
-            textAlign: 'center',
-            padding: '24px',
-            backgroundColor: '#ffffff',
-            border: '1px solid #e1e3e5',
-            borderRadius: '8px'
-          }}>
-            <div style={{
-              width: '48px',
-              height: '48px',
-              backgroundColor: '#005bd3',
-              borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              margin: '0 auto 16px',
-              color: 'white',
-              fontSize: '20px',
-              fontWeight: 'bold'
-            }}>
-              3
-            </div>
-            <h4 style={{ fontSize: '16px', fontWeight: '600', margin: '0 0 8px 0' }}>
-              Commission Processed
-            </h4>
-            <p style={{ fontSize: '14px', color: '#6d7175', margin: '0' }}>
-              Relevant order details (such as order amount and discount code used) are securely sent to Circular Wealth for accurate attribution.
-            </p>
-          </div>
+          ))}
         </div>
       </div>
 
@@ -184,33 +134,17 @@ export default function AppOverview() {
         </h3>
         
         <div style={{ display: 'grid', gap: '16px' }}>
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-            <span style={{ fontSize: '18px' }}>🔄</span>
-            <div>
-              <strong>Automatic Tracking:</strong> Fully automated—no manual tagging or tracking setup required.
+          {[
+            { icon: '🔄', text: <><strong>Automatic Tracking:</strong> Fully automated—no manual tagging or tracking setup required.</> },
+            { icon: '🎯', text: <><strong>Circular Wealth Integration:</strong> Built to connect directly with the <strong>Circular Wealth</strong> platform for seamless affiliate commission management.</> },
+            { icon: '⚡', text: <><strong>Real-Time Processing:</strong> Order tracking and data syncing happen instantly.</> },
+            { icon: '🛡️', text: <><strong>Secure & Reliable:</strong> Enterprise-grade tracking with high accuracy and robust attribution logic.</> }
+          ].map((feature, index) => (
+            <div key={index} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+              <span style={{ fontSize: '18px' }}>{feature.icon}</span>
+              <div>{feature.text}</div>
             </div>
-          </div>
-          
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-            <span style={{ fontSize: '18px' }}>🎯</span>
-            <div>
-              <strong>Circular Wealth Integration:</strong> Built to connect directly with the <strong>Circular Wealth</strong> platform for seamless affiliate commission management.
-            </div>
-          </div>
-          
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-            <span style={{ fontSize: '18px' }}>⚡</span>
-            <div>
-              <strong>Real-Time Processing:</strong> Order tracking and data syncing happen instantly.
-            </div>
-          </div>
-          
-          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
-            <span style={{ fontSize: '18px' }}>🛡️</span>
-            <div>
-              <strong>Secure & Reliable:</strong> Enterprise-grade tracking with high accuracy and robust attribution logic.
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
@@ -239,14 +173,17 @@ export default function AppOverview() {
         </p>
         <button 
           onClick={() => {
-            const shopDomain = window.location.hostname.includes('shopify.com') 
-              ? window.location.pathname.split('/')[2] 
-              : null;
-            
-            if (shopDomain) {
-              const themeEditorUrl = `https://admin.shopify.com/store/${shopDomain}/themes/current/editor`;
-              window.open(themeEditorUrl, '_top');
-            }
+            console.log('Opening theme editor...');
+            (() => {
+              console.log(window);
+              const shopDomain = window.location.hostname.includes('shopify.com') 
+                ? window.location.pathname.split('/')[2] 
+                : null;
+
+              if (shopDomain) {
+                window.open(`https://admin.shopify.com/store/${shopDomain}/themes/current/editor`, '_top');
+              }
+            })();
           }}
           style={{
             display: 'inline-block',
@@ -272,7 +209,7 @@ export default function AppOverview() {
         }}>
           In the theme editor:
           <br />
-          1. Click "Add app block" or look in the left sidebar
+          1. Click "Add app block" or look in the left sidebar - LEON TEST
           <br />
           2. Find "Circular Wealth Tracking" 
           <br />
