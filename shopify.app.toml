@@ -36,5 +36,10 @@ redirect_urls = [
   "https://circular-wealth-tracking.vercel.app/api/auth/callback"
 ]
 
+[app_proxy]
+url = "https://circular-wealth-tracking.vercel.app/api/proxy"
+subpath = "api"
+prefix = "apps"
+
 [pos]
 embedded = false
