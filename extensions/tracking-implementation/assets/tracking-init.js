@@ -129,7 +129,7 @@ if (document.readyState === 'loading') {
 }
 
 async function sendTransactionIdToServer(transactionId) {
-    const response = await fetch('/apps/api', {
+    const response = await fetch('https://circular-wealth-tracking.vercel.app/apps/api', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
