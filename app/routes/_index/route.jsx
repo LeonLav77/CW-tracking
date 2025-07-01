@@ -176,6 +176,8 @@ export default function AppOverview() {
             console.log('Opening theme editor...');
             (() => {
               console.log(window);
+              console.log(window.location);
+              console.log(window.location.hostname);
               const shopDomain = window.location.hostname.includes('shopify.com') 
                 ? window.location.pathname.split('/')[2] 
                 : null;
