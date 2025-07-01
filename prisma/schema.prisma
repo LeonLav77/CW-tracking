@@ -3,27 +3,26 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../node_modules/.prisma/client"
-
 }
 
 // Note that some adapters may set a maximum length for the String type by default, please ensure your strings are long
 // enough when changing adapters.
 // See https://www.prisma.io/docs/orm/reference/prisma-schema-reference#string for more information
 datasource db {
-  provider = "sqlite"
-  url      = "file:dev.sqlite"
+  provider  = "postgresql" // other supported providers are: postgresql, mysql, sqlite, sqlserver, mongodb
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_DATABASE_URL")
 }
 
 model Session {
-  id            String    @id
+  id            String    @id @default(cuid())
   shop          String
   state         String
   isOnline      Boolean   @default(false)
   scope         String?
-  expires       DateTime?
+  expires       DateTime? @db.Timestamp
   accessToken   String
-  userId        BigInt?
+  userId        BigInt?   @db.BigInt
   firstName     String?
   lastName      String?
   email         String?
