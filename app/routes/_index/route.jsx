@@ -1,17 +1,6 @@
 import React from 'react';
 
 export default function AppOverview() {
-  const handleThemeExtensionSetup = () => {
-    const shopDomain = window.location.hostname.includes('shopify.com') 
-      ? window.location.pathname.split('/')[2] 
-      : null;
-    
-    if (shopDomain) {
-      const themeEditorUrl = `https://admin.shopify.com/store/${shopDomain}/themes/current/editor`;
-      window.open(themeEditorUrl, '_top');
-    }
-  };
-
   return (
     <div style={{ 
       maxWidth: '800px', 
@@ -249,7 +238,16 @@ export default function AppOverview() {
           Enable the theme extension in your Shopify theme settings to activate tracking
         </p>
         <button 
-          onClick={handleThemeExtensionSetup}
+          onClick={() => {
+            const shopDomain = window.location.hostname.includes('shopify.com') 
+              ? window.location.pathname.split('/')[2] 
+              : null;
+            
+            if (shopDomain) {
+              const themeEditorUrl = `https://admin.shopify.com/store/${shopDomain}/themes/current/editor`;
+              window.open(themeEditorUrl, '_top');
+            }
+          }}
           style={{
             display: 'inline-block',
             backgroundColor: '#005bd3',
