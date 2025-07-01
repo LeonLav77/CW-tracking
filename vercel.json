@@ -2,7 +2,7 @@
 	"regions": [
 		"fra1"
 	],
-	"installCommand": "bun install --production --silent",
+	"installCommand": "bun install --silent",
 	"trailingSlash": false,
 	"git": {
 		"deploymentEnabled": false
