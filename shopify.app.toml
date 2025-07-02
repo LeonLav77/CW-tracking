@@ -37,7 +37,7 @@ redirect_urls = [
 ]
 
 [app_proxy]
-url = "https://circular-wealth-tracking.vercel.app/api"
+url = "https://circular-wealth-tracking.vercel.app/app/proxy"
 subpath = "api"
 prefix = "apps"
 
