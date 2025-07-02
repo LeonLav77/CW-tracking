@@ -130,7 +130,7 @@ if (document.readyState === 'loading') {
 
 async function sendTransactionIdToServer(transactionId) {
     console.log('Sending transaction ID to server:', transactionId);
-    const response = await fetch('/apps/api', {
+    const response = await fetch('https://local-circular-tracking-test.vercel.app/app/proxy', {
         method: 'POST',
         headers: { 
             'Content-Type': 'application/json',
