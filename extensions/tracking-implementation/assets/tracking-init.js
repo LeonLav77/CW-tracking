@@ -132,7 +132,11 @@ async function sendTransactionIdToServer(transactionId) {
     console.log('Sending transaction ID to server:', transactionId);
     const response = await fetch('/apps/api', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 
+            'Content-Type': 'application/json',
+            'X-Requested-With': 'XMLHttpRequest'
+    
+        },
         body: JSON.stringify({
             endpoint: 'store',
             attributes: { transaction_id: transactionId }
