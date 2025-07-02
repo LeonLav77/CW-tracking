@@ -16,7 +16,7 @@ export async function action() {
   try {
     // Your external API call
     const response = await fetch('https://cms.circularwealth.com/api/shopify/store-transaction-id', {
-      method: 'GET',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       }
