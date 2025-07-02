@@ -9,6 +9,16 @@ export async function loader() {
       'Content-Type': 'application/json',
     }
   });
+}
+
+export async function action() {
+  
+  return json({ message: "Proxy route is working" }, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+    }
+  });
 
   try {
     // Your external API call

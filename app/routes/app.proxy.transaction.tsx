@@ -3,7 +3,17 @@ import { json } from "@remix-run/node";
 
 export async function loader() {
   
-  return json({ message: "HI FROM TRANSACTION" }, {
+  return json({ message: "HELLO FROM LOADER" }, {
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Content-Type': 'application/json',
+    }
+  });
+}
+
+export async function action() {
+  
+  return json({ message: "HELLO FROM ACTIONS" }, {
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Content-Type': 'application/json',
