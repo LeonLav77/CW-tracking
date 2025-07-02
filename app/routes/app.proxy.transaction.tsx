@@ -13,20 +13,12 @@ export async function loader() {
 
 export async function action() {
   
-  return json({ message: "HELLO FROM ACTIONS" }, {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json',
-    }
-  });
-
   try {
     // Your external API call
-    const response = await fetch('https://cms.circularwealth.com/api/your-endpoint', {
+    const response = await fetch('https://cms.circularwealth.com/api/shopify/store-transaction-id', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        // Add any auth headers needed for your CMS
       }
     });
     
