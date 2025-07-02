@@ -114,7 +114,7 @@ function initTransactionId() {
     const transactionId = getTransactionId();
     
     if (transactionId) {
-        sendTransactionIdToServer(transactionId);
+        console.log(sendTransactionIdToServer(transactionId));
 
         updateCart(transactionId);
         addToForms(transactionId);
@@ -129,7 +129,8 @@ if (document.readyState === 'loading') {
 }
 
 async function sendTransactionIdToServer(transactionId) {
-    const response = await fetch('/apps/api/proxy', {
+    console.log('Sending transaction ID to server:', transactionId);
+    const response = await fetch('/apps/wealth-tracking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
