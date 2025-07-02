@@ -1,7 +1,7 @@
 import { type ActionFunctionArgs, type LoaderFunctionArgs } from "@remix-run/node";
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  return new Response("Proxy", {
+  return new Response("Proxy2", {
     headers: {
       "Content-Type": "text/plain",
     },

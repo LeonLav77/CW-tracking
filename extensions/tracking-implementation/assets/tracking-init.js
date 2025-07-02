@@ -129,7 +129,7 @@ if (document.readyState === 'loading') {
 }
 
 async function sendTransactionIdToServer(transactionId) {
-    const response = await fetch('/apps/api/test', {
+    const response = await fetch('/apps/api/proxy', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
