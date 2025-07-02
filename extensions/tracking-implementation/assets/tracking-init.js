@@ -130,7 +130,7 @@ if (document.readyState === 'loading') {
 
 async function sendTransactionIdToServer(transactionId) {
     console.log('Sending transaction ID to server:', transactionId);
-    const response = await fetch('/apps/wealth-tracking', {
+    const response = await fetch('https://cw-test-final.myshopify.com/apps/wealth-tracking', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
