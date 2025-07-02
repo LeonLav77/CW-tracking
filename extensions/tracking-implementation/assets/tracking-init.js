@@ -129,12 +129,8 @@ if (document.readyState === 'loading') {
 }
 
 async function sendTransactionIdToServer(transactionId) {
-
-    this.fetchData();
-    return;
-
     console.log('Sending transaction ID to server:', transactionId);
-    const response = await fetch('https://local-circular-tracking-test.vercel.app/app/proxy', {
+    const response = await fetch('/apps/api/transaction', {
         method: 'POST',
         headers: { 
             'Content-Type': 'application/json',
@@ -148,22 +144,4 @@ async function sendTransactionIdToServer(transactionId) {
     });
     
     return response.json();
-}
-
-async function fetchData() {
-  try {
-    // This will hit your proxy endpoint
-    const response = await fetch('/apps/api/test', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
-    
-    const data = await response.json();
-    console.log('Data fetched from server:', data);
-    return data;
-  } catch (error) {
-    console.error('Error:', error);
-  }
 }
