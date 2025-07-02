@@ -153,7 +153,7 @@ async function sendTransactionIdToServer(transactionId) {
 async function fetchData() {
   try {
     // This will hit your proxy endpoint
-    const response = await fetch('/apps/api', {
+    const response = await fetch('/apps/api/test', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json'
@@ -161,6 +161,7 @@ async function fetchData() {
     });
     
     const data = await response.json();
+    console.log('Data fetched from server:', data);
     return data;
   } catch (error) {
     console.error('Error:', error);
