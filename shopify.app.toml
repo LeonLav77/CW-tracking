@@ -27,7 +27,7 @@ api_version = "2025-04"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "read_customers,read_orders,read_products"
+scopes = "read_customers,read_orders,read_products,write_app_proxy"
 
 [auth]
 redirect_urls = [
@@ -37,7 +37,7 @@ redirect_urls = [
 ]
 
 [app_proxy]
-url = "https://circular-wealth-tracking.vercel.app/api/proxy"
+url = "https://circular-wealth-tracking.vercel.app/api"
 subpath = "api"
 prefix = "apps"
 
